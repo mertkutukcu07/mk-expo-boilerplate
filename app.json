@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "mk-expo-boilerplate",
+    "slug": "mk-expo-boilerplate",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/root/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/root/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/root/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/root/favicon.png"
+    }
+  }
+}
