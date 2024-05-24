@@ -5,6 +5,7 @@ import {
 } from "@react-navigation/native-stack";
 import { HomeScreen } from "@/screens";
 import { RouteNames } from "@/constants/RouteNames";
+import { Header } from "@/components";
 
 export type AppStackParamList = {
   [RouteNames.HOME]: undefined;
@@ -15,7 +16,13 @@ const Stack = createNativeStackNavigator<AppStackParamList>();
 const AppStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name={RouteNames.HOME} component={HomeScreen} />
+      <Stack.Screen
+        options={{
+          header: () => <Header title="Home" />,
+        }}
+        name={RouteNames.HOME}
+        component={HomeScreen}
+      />
     </Stack.Navigator>
   );
 };

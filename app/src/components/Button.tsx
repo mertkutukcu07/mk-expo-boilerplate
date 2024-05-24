@@ -66,7 +66,7 @@ const Button = ({
       {loading ? (
         <ActivityIndicator size="small" color={colors.white} />
       ) : (
-        <>
+        <React.Fragment>
           {leftIcon && !loading && <View>{leftIcon}</View>}
           <Text
             text={text}
@@ -75,7 +75,7 @@ const Button = ({
           />
           {rightIcon && !loading && <View>{rightIcon}</View>}
           {children}
-        </>
+        </React.Fragment>
       )}
     </TouchableOpacity>
   );

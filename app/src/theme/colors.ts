@@ -10,4 +10,6 @@ export const colors = {
   navyblue: "#1B2A63",
   darkgray: "#414A5B",
   darkpink: "#E4B8C6",
+  border: "#C3C3CE",
+  placeholder: "#0E0D39",
 };
