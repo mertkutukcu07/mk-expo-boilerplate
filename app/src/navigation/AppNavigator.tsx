@@ -1,10 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { RouteNames } from "../constants/RouteNames";
-import { HomeScreen } from "../screens";
 import {
   NativeStackScreenProps,
   createNativeStackNavigator,
 } from "@react-navigation/native-stack";
+import { HomeScreen } from "@/screens";
+import { RouteNames } from "@/constants/RouteNames";
 
 export type AppStackParamList = {
   [RouteNames.HOME]: undefined;

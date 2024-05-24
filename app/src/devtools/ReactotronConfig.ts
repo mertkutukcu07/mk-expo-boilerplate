@@ -18,11 +18,31 @@ Reactotron.onCustomCommand({
 });
 
 Reactotron.onCustomCommand({
-  title: "Delete AsyncStorage",
-  description: " Deletes all AsyncStorage data",
-  command: " deleteAsyncStorage",
+  title: "Reload App",
+  description: "Reloads the React Native app",
+  command: "reloadApp",
   handler: () => {
-    Reactotron.log("Deleting AsyncStorage data");
+    Reactotron.log("Reloading React Native app");
+    NativeModules.DevMenu.reload();
+  },
+});
+
+Reactotron.onCustomCommand({
+  title: "Clear Cache",
+  description: "Clears the React Native cache",
+  command: "clearCache",
+  handler: () => {
+    Reactotron.log("Clearing React Native cache");
+    NativeModules.DevMenu.clearCache();
+  },
+});
+
+Reactotron.onCustomCommand({
+  title: "Clear AsyncStorage",
+  description: "Clears the React Native AsyncStorage",
+  command: "clearAsyncStorage",
+  handler: () => {
+    Reactotron.log("Clearing React Native AsyncStorage");
     AsyncStorage.clear();
   },
 });

@@ -1,6 +1,6 @@
 if (__DEV__) {
   //@ts-ignore
-  import("src/devtools/ReactotronConfig");
+  import("@/devtools/ReactotronConfig");
 }
 import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
