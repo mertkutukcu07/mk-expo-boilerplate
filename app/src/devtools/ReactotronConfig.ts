@@ -3,7 +3,7 @@ import { NativeModules } from "react-native";
 import Reactotron from "reactotron-react-native";
 
 Reactotron.setAsyncStorageHandler(AsyncStorage)
-  .configure({ name: "ParentingPlus" })
+  .configure({ name: "mk-expo-boilerplate" })
   .useReactNative()
   .connect();
 
