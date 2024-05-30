@@ -7,7 +7,10 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { customFontstoLoad } from "./app/src/theme/typography";
 import React from "react";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import {
+  SafeAreaProvider,
+  initialWindowMetrics,
+} from "react-native-safe-area-context";
 import { APIProvider } from "./app/src/service/ApiProvider";
 import { AppNavigator } from "./app/src/navigation/AppNavigator";
 
@@ -29,7 +32,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <StatusBar style="dark" />
       <APIProvider>
         <AppNavigator />
