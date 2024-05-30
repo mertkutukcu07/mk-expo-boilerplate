@@ -13,7 +13,7 @@ interface ThemeProps {
   children: React.ReactNode;
 }
 
-export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
+const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
@@ -52,23 +52,4 @@ export const useTheme = (): ThemeContextType => {
   return context;
 };
 
-export const makeStyles =
-  <T extends StyleSheet.NamedStyles<T> | StyleSheet.NamedStyles<any>, V>(
-    styles:
-      | T
-      | ((
-          theme: {
-            theme: "light" | "dark";
-          } & any,
-          props: V
-        ) => T)
-  ) =>
-  (props?: V): T => {
-    const { theme } = useTheme();
-
-    const css =
-      typeof styles === "function"
-        ? styles(theme, props ?? ({} as any))
-        : styles;
-    return StyleSheet.create(css);
-  };
+export default ThemeProvider;

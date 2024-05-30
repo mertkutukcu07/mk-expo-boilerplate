@@ -11,10 +11,8 @@ import {
   SafeAreaProvider,
   initialWindowMetrics,
 } from "react-native-safe-area-context";
-import { APIProvider } from "./app/src/providers/ApiProvider";
 import { AppNavigator } from "./app/src/navigation/AppNavigator";
-import { LanguageProvider } from "@/providers/LanguageProvider";
-import { ThemeProvider } from "@/providers/ThemeProvider";
+import { APIProvider, LanguageProvider, ThemeProvider } from "@/providers";
 
 export default function App() {
   const [loaded, error] = useFonts(customFontstoLoad);

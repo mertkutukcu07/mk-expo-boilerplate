@@ -1,4 +1,3 @@
-// LanguageContext.tsx
 import type React from "react";
 import { createContext, useState, useEffect, useContext } from "react";
 import { useLocales } from "expo-localization";
@@ -19,7 +18,7 @@ interface LanguageProps {
   children: React.ReactNode;
 }
 
-export const LanguageProvider: React.FC<LanguageProps> = ({ children }) => {
+const LanguageProvider: React.FC<LanguageProps> = ({ children }) => {
   const [language, setLanguage] = useState<string | null>(null);
   const { t } = useTranslation();
   const [{ languageCode: defaultLanguage }] = useLocales();
@@ -54,6 +53,8 @@ export const LanguageProvider: React.FC<LanguageProps> = ({ children }) => {
     </LanguageContext.Provider>
   );
 };
+
+export default LanguageProvider;
 
 export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);

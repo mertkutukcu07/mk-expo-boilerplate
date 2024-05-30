@@ -34,10 +34,7 @@ export type AppStackScreenProps<T extends keyof AppStackParamList> =
 
 export const AppNavigator = function AppNavigator(props: NavigationProps) {
   return (
-    <NavigationContainer
-      // @ts-ignore
-      {...props}
-    >
+    <NavigationContainer {...props}>
       <AppStack />
     </NavigationContainer>
   );
