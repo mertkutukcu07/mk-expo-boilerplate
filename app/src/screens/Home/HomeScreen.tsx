@@ -1,28 +1,43 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { RouteNames } from "@/constants/RouteNames";
 import { AppStackScreenProps } from "@/navigation/AppNavigator";
 import { Screen } from "@/components";
-import { useLanguage } from "@/providers/LanguageProvider";
+import { useTheme } from "@/providers/ThemeProvider";
+import { Colors } from "@/theme";
 
 interface HomeScreenProps extends AppStackScreenProps<RouteNames.HOME> {}
 
 const HomeScreen: React.FC<HomeScreenProps> = () => {
-  const { language, t } = useLanguage();
+  const { theme, changeTheme } = useTheme();
 
   return (
     <Screen edges={["top", "bottom"]} preset="scroll">
-      <View style={styles.container}></View>
+      <View style={styles({ theme }).container}>
+        <TouchableOpacity
+          onPress={() => {
+            changeTheme(theme === "dark" ? "light" : "dark");
+          }}
+        >
+          <Text style={styles({ theme }).text}>fsdfs</Text>
+        </TouchableOpacity>
+      </View>
     </Screen>
   );
 };
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+const styles = ({ theme }: { theme: "dark" | "light" }) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    text: {
+      fontSize: 20,
+      fontWeight: "bold",
+      color: Colors[theme].white,
+    },
+  });

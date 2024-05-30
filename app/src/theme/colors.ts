@@ -1,15 +1,31 @@
-export const colors = {
-  primary: "#F22969",
-  textlight: "#73777B",
-  textmedium: "#454567",
-  textbold: "#0E0D39",
-  black: "#000000",
-  white: "#FFFFFF",
-  green: "#009281",
-  lightgreen: "#ECF7F5",
-  navyblue: "#1B2A63",
-  darkgray: "#414A5B",
-  darkpink: "#E4B8C6",
-  border: "#C3C3CE",
-  placeholder: "#0E0D39",
+type Theme = {
+  commonWhite: string;
+  commonBlack: string;
+  themeColor: string;
+  white: string;
+  sky: string;
+  gray: string;
 };
+
+const commonColor = {
+  commonWhite: "#FFFFFF",
+  commonBlack: "#000000",
+};
+
+const light: Theme = {
+  themeColor: "#FFFFFF",
+  white: "#000000",
+  sky: "#DE5E69",
+  gray: "gray",
+  ...commonColor,
+};
+
+const dark: Theme = {
+  themeColor: "#000000",
+  white: "#FFFFFF",
+  sky: "#831a23",
+  gray: "white",
+  ...commonColor,
+};
+
+export default { light, dark };

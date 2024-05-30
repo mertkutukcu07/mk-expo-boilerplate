@@ -14,6 +14,7 @@ import {
 import { APIProvider } from "./app/src/providers/ApiProvider";
 import { AppNavigator } from "./app/src/navigation/AppNavigator";
 import { LanguageProvider } from "@/providers/LanguageProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 
 export default function App() {
   const [loaded, error] = useFonts(customFontstoLoad);
@@ -34,11 +35,13 @@ export default function App() {
 
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-      <StatusBar style="dark" />
+      <StatusBar style="auto" />
       <LanguageProvider>
-        <APIProvider>
-          <AppNavigator />
-        </APIProvider>
+        <ThemeProvider>
+          <APIProvider>
+            <AppNavigator />
+          </APIProvider>
+        </ThemeProvider>
       </LanguageProvider>
     </SafeAreaProvider>
   );

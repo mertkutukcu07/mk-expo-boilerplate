@@ -5,7 +5,6 @@ import {
 } from "@react-navigation/native-stack";
 import { HomeScreen } from "@/screens";
 import { RouteNames } from "@/constants/RouteNames";
-import { Header } from "@/components";
 
 export type AppStackParamList = {
   [RouteNames.HOME]: undefined;
@@ -35,7 +34,10 @@ export type AppStackScreenProps<T extends keyof AppStackParamList> =
 
 export const AppNavigator = function AppNavigator(props: NavigationProps) {
   return (
-    <NavigationContainer {...props}>
+    <NavigationContainer
+      // @ts-ignore
+      {...props}
+    >
       <AppStack />
     </NavigationContainer>
   );

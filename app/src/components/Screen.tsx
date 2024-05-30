@@ -5,7 +5,8 @@ import {
   Edge,
 } from "react-native-safe-area-context";
 import { ScrollView, StyleSheet, ViewStyle } from "react-native";
-import { colors } from "../theme/colors";
+import { useTheme } from "@/providers/ThemeProvider";
+import { Colors } from "@/theme";
 
 interface ScreenProps extends SafeAreaViewProps {
   children: React.ReactNode;
@@ -42,14 +43,15 @@ const ScrollScreen: React.FC<ScreenProps> = ({
 const Screen: React.FC<ScreenProps> = ({
   children,
   edges = ["top", "bottom"],
-  color = colors.white,
+  color,
   style,
   preset = "fixed",
   ...rest
 }) => {
+  const { theme } = useTheme();
   const combinedStyle = [
     styles.container,
-    { backgroundColor: color },
+    { backgroundColor: Colors[theme].themeColor },
     style,
   ] as ViewStyle;
 
