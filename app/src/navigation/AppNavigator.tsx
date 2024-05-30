@@ -18,7 +18,7 @@ const AppStack = () => {
     <Stack.Navigator>
       <Stack.Screen
         options={{
-          header: () => <Header title="Home" />,
+          headerShown: false,
         }}
         name={RouteNames.HOME}
         component={HomeScreen}
